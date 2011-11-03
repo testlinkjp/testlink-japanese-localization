@@ -179,6 +179,61 @@ BTSのページへの関連付けは、以下の機能を備えています：
 </p>";
 
 // execFilter.html
+$TLS_hlp_executeFilter = "<h2>Settings</h2>
+
+<p>Settings allows you to select the test plan, build and platform (if available) to
+be executed.</p>
+
+<h3>Test Plan</h3>
+<p>You can choose the required test plan. According to the chosen test plan the appropriate
+builds will be shown. After choosing a test plan filters will be reset.</p>
+
+<h3>Platform</h3>
+<p>If the platforms feature is used, you must select the appropriate platform before execution.</p>
+
+<h3>Build to execute</h3>
+<p>You can choose the build you whish to execute the test cases for.</p>
+
+<h2>Filters</h2>
+<p>Filters provide the opportunity to further influence the set of shown test cases
+before the execution. You can reduce the set of shown test cases by specifying filters
+and click the \"Apply\" button.</p>
+
+<p> Advanced Filters will allow you to specify a set of values for applicable filters by
+using CTRL-Click inside the Multi-Select ListBox</p>
+
+
+<h3>Keyword Filter</h3>
+<p>You can filter test cases by the keywords that have been assigned. You can choose " .
+"multiple keywords by using CTRL-Click. If you chose more than one keyword you can " .
+"decide whether only test cases are shown that have all chosen keywords assigned " .
+"(radiobutton \"And\") or  at least one of the chosen keywords (radiobutton \"Or\").</p>
+
+<h3>Priority Filter</h3>
+<p>You can filter test cases by test priority. The test priority is \"test case importance\" " .
+"combined with \"test urgency\" within the current test plan.</p> 
+
+<h3>User Filter</h3>
+<p>You can filter test cases that are not assigned (\"Nobody\") or assigned to \"Somebody\". " .
+"You can also filter test cases that are assigned to a specific tester. If you chose a specific " .
+"tester you also have the possibility to show test cases that are unassigned in addition to " .
+"those test cases (advanced Filters are available). </p>
+
+<h3>Result Filter</h3>
+<p>You can filter test cases by result (advanced Filters are available). You can filter by " .
+"result \"on chosen build for execution\", \"on latest execution\", \"on ALL builds\", " .
+"\"on ANY build\" and \"on specific build\". If \"specific build\" is chosen you then can " .
+"specify the build. </p>";
+
+
+// newest_tcversions.html
+$TLS_hlp_planTcModified = "<h2>Newest versions of linked Test Cases</h2>
+<p>The whole set of Test Cases linked to Test Plan is analyzed, and a list of Test Cases
+which have a newest version is displayed (against the current set of the Test Plan).
+</p>";
+
+// 以下は旧翻訳削除
+/*
 $TLS_hlp_executeFilter = "<h2>テスト実行時のビルドによるフィルタリング</h2>
 
 <p>左側のシートは、現在のテスト計画にアサインされているテストケースのナビゲータ、および、" .
@@ -211,6 +266,7 @@ $TLS_hlp_executeFilter = "<h2>テスト実行時のビルドによるフィル�
 <h3>テスト担当者によるフィルター</h3>
 <p>アサイン計画に従ってフィルターをかけることができます。また、「未アサインを含む」の" .
 "チェックボックスにより、アサインされていないテストケースを表示することができます。</p>";
+*/
 /*
 <h2>Most Current Result</h2>
 <p>By default or if the 'most current' checkbox is unchecked, the tree will be sorted 
@@ -247,13 +303,13 @@ $TLS_hlp_requirementsCoverage = "<h2>要件カバレッジ</h2>
 バージョン番号を含めた題号を<b>タイトル</b>欄に記載してください。
 また、仕様の簡単な説明や備考を<b>スコープ</b>欄に記載することができます。</p>
 
-<p><b>ドキュメント内の全要件数</b> は、
+<p><b><a name='total_count'>ドキュメント内の全要件数</b> は、
 TestLinkに全要件を登録しなかった場合の要件カバレッジを計算するために使用します。
 値<b>0</b>を設定した場合は、TestLinkに登録されている要件数をメトリクス計算で使用します。</p>
 <p><i>例えば、SRSが 200 の要件を含んでいるが、50のみをTestLinkに登録したとします。
 するとテストの要件カバレッジは25%となります (追加した要件を全てテストした場合)。</i></p>
 
-<h3>要件</h3>
+<h3><a name=\"req\">要件</h3>
 <p>要件を作成する要件仕様のタイトルをクリックしてください。
 要件をドキュメントに作成、編集、削除、または要件をインポートすることができます。
 どの要件もタイトル、スコープ、ステータスがあります。
@@ -269,6 +325,11 @@ TestLinkに全要件を登録しなかった場合の要件カバレッジを計
 タイトルとスコープは作成されたテストケースにコピーされます。</p>
 ";
 
+$TLS_hlp_req_coverage_table = "<h3>Coverage:</h3>
+A value of e.g. \"40% (8/20)\" means that 20 Test Cases have to be created for this Requirement 
+to test it completely. 8 of those have already been created and linked to this Requirement, which 
+makes a coverage of 40 percent.
+";
 
 // planAddTC_m1.tpl
 $TLS_hlp_planAddTC = "<h2>「カスタムフィールドの保存」について</h2>
@@ -276,6 +337,77 @@ $TLS_hlp_planAddTC = "<h2>「カスタムフィールドの保存」について
 「テスト計画で表示する=true」および<br />
 「テスト計画で有効にする=true」<br />
 このとき、テスト計画にアサインされたテストケースに関するページのみでこのカスタムフィールドが表示されいます。
+";
+
+// resultsByTesterPerBuild.tpl
+$TLS_hlp_results_by_tester_per_build_table = "<b>More information about testers:</b><br />
+If you click on a tester name in this table, you will get a more detailed overview
+about all Test Cases assigned to that user and his testing progress.<br /><br />
+<b>Note:</b><br />
+This Report shows those test cases, which are assigned to a specific user and have been executed 
+based on each active build. Even if a test case has been executed by another user than the assigned user, 
+the test case will appear as executed for the assigned user.
+";
+
+
+// req_edit
+$TLS_hlp_req_edit = "<h3>Internal links on scope:</h3>
+<p>Internal links serve the purpose of creating links to other requirements/requirement specifications 
+with a special syntax. Internal Links behaviour can be changed in the config file.
+<br /><br />
+<b>Usage:</b>
+<br />
+Link to requirements: [req]req_doc_id[/req]<br />
+Link to requirement specifications: [req_spec]req_spec_doc_id[/req_spec]</p>
+
+<p>The test project of the requirement / requirement specification, a version and an anchor 
+to jump to can also be specified:<br />
+[req tproj=&lt;tproj_prefix&gt; anchor=&lt;anchor_name&gt; version=&lt;version_number&gt;]req_doc_id[/req]<br />
+This syntax also works for requirement specifications (version attribute has no effect).<br />
+If you do not specify a version the whole requirement including all versions will be shown.</p>
+
+<h3>Log message for changes:</h3>
+<p>Whenever a change is made Testlink will ask for a log message. This log message served the purpose of traceability.
+If only the scope of the requirement has changed you are free to decide whether to create a new revision or not. 
+Whenever anything besides the scope is changed you are forced to create a new revision.</p>
+";
+
+
+// req_view
+$TLS_hlp_req_view = "<h3>Direct Links:</h3>
+<p>To easily share this document with others simply click the globe icon at the top of this document to create a direct link.</p>
+
+<h3>View History:</h3>
+<p>This feature allows to compare revisions/versions of requirements if more than one revision/version of the requirement exists.
+The overview provides the Log message for each revision/version, a timestamp and the author of the last change.</p>
+
+<h3>Coverage:</h3>
+<p>Shows all linked test cases for this requirement.</p>
+
+<h3>Relations:</h3>
+<p>Requirement Relations are used to model relationships between requirements. 
+Custom relations and the option to allow relations between requirements of 
+different test projects can be configured on the config file.
+If you set the relation \"Requirement A is parent of Requirement B\", 
+Testlink will set the relation \"Requirement B is child of Requirement A\" implicitly.</p>
+";
+
+
+// req_spec_edit
+$TLS_hlp_req_spec_edit = "<h3>Internal links on scope:</h3>
+<p>Internal links serve the purpose of creating links to other requirements/requirement specifications 
+with a special syntax. Internal Links behaviour can be changed in the config file.
+<br /><br />
+<b>Usage:</b>
+<br />
+Link to requirements: [req]req_doc_id[/req]<br />
+Link to requirement specifications: [req_spec]req_spec_doc_id[/req_spec]</p>
+
+<p>The test project of the requirement / requirement specification, a version and an anchor 
+to jump to can also be specified:<br />
+[req tproj=&lt;tproj_prefix&gt; anchor=&lt;anchor_name&gt; version=&lt;version_number&gt;]req_doc_id[/req]<br />
+This syntax also works for requirement specifications (version attribute has no effect).<br />
+If you do not specify a version the whole requirement including all versions will be shown.</p>
 ";
 
 // xxx.html
