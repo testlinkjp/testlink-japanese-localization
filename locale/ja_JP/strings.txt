@@ -1528,6 +1528,9 @@ $TLS_deactivate_this_tcversion = "このバージョンを無効にする";
 $TLS_execution_type = '実行タイプ';
 $TLS_execution_type_short_descr = '実行';
 $TLS_tcversion_is_inactive_msg = "このバージョンは無効です => テスト計画には含まれません";
+$TLS_system_blocks_delete_executed_tc = "システム設定により実行されたバージョンの削除は制限されています";
+$TLS_system_blocks_delete_executed_tc_when = "システム設定により実行されたバージョンのあるテストケースの削除は、".
+                                             "制限されています";
 
 
 
@@ -1667,6 +1670,7 @@ $TLS_info_notrun_tc_report = "本レポートは、テスト計画のビルド�
                              "テストケースを全て表示します。";
 $TLS_no_blocked = "ブロックされたテストケースはありません。";
 $TLS_no_notrun = "実行されていないテストケースはありません。";
+$TLS_no_not_run = "実行されていないテストケースはありません。";
 $TLS_no_failed = "失敗したテストケースはありません。";
 
 
@@ -1687,6 +1691,26 @@ $TLS_th_overall_platform = "プラットフォーム全体";
 $TLS_title_res_by_platform = "プラットフォーム毎の結果";
 $TLS_th_expected = "目標";
 $TLS_th_overall = "全体";
+$TLS_info_res_by_top_level_suites = "本レポートはテストスイートの各トップレベルテストスイートの結果を示します。".
+                                    "各子要素のテストスイートは、それを含むトップレベルテストスイートのカウントに".
+                                    "含まれます。";
+$TLS_info_report_tc_priorities = "This report shows results according to the test priorities " .
+                                 "The priority of a test case is calculated based on the test " .
+                                 "importance and test urgency. For further information about " .”"
+                                 "test priority read the manual and check your configuration.";
+$TLS_info_res_by_platform = "This report shows the result for each platform linked to this test " .
+                            "plan.";
+$TLS_info_report_milestones_prio = "This Report shows milestones defined for this test plan. " .
+                                   "A milestone has been reached when all \"sub-milestones\" for " .
+                                   "each priority are reached (dyed green).";
+$TLS_info_report_milestones_no_prio = "This Report shows milestones defined for this test plan. " .
+                                      "A milestone has been reached when Test Progress is dyed " .
+                                      "green (Test Progress > Execution goal).";
+$TLS_info_res_by_kw = "This report shows results for each keyword. If a test case has multiple " .
+                      "keywords assigned it will be count for each assigned keyword.";
+$TLS_info_gen_test_rep = "<b>General Information</b><br />" .
+                         "All reports only consider last execution of each test case.<br />" .
+                         "You can sort tables by clicking the column header.";
 
 
 // ----- gui/templates/resultsMoreBuilds_query_form.tpl -----
