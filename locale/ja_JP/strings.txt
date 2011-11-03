@@ -1416,18 +1416,18 @@ $TLS_no_milestones = "テスト計画に対してマイルストーンが存在�
 $TLS_popup_delete_milestones = "本当にマイルストーン %NAME% を削除しますか?";
 $TLS_warning_delete_milestone = "削除します: %s <br /> <br /> よろしいですか?";
 $TLS_warning_empty_milestone_name = "マイルストーン名は空ではいけません!";
-$TLS_info_milestone_create_prio = "Milestones consider executions within a specified time period.<br />This period starts " .
-                                  "with the <b>Start Date 00:00:00</b> - if the Start Date is not specified all executions are " .
-                                  "taken into account - and ends with the <b>Target date 23:59:59</b>.<br />All executions after the " .
-                                  "Target Date are ignored.<br />Milestones are reached when all \"Sub-Milestones\" for the " .
-                                  "different <b>priorities</b> are reached. Status of Milestones can be found on General Test Plan " .
-                                  "Metrics.";
-$TLS_info_milestone_create_no_prio = "Milestones consider executions within a specified time period.<br />This period starts " .
-                                     "with the <b>Start Date 00:00:00</b> - if the Start Date is not specified all executions are " .
-                                     "taken into account - and ends with the <b>Target date 23:59:59</b>.<br />All executions after the " .
-                                     "Target Date are ignored.<br />Milestones are reached when the chosen percentage of " .
-                                     "<b>Completed tests</b> is reached. Status of Milestones can be found on General Test Plan " .
-                                     "Metrics.";
+$TLS_info_milestone_create_prio = "マイルストーンは指定された期間でのテスト実行を管理します。".
+                                  "期間は<b>開始日の00時00分00秒</b>に始まり（開始日時が指定されていないなら、".
+                                  "全てのテスト実行が処理されます）、<b>目標日の23時59分59秒</b>に終了します。<br />".
+                                  "目標日以降のテスト実行は無視されます。<br />".
+                                  "マイルストーンは、異なる期間を持つ全ての「サブマイルストーン」が終了したときに".
+                                  "終了します。マイルストーンの状況はテスト計画のメトリクスにて確認することが出来ます。";
+$TLS_info_milestone_create_no_prio = "マイルストーンは指定された期間でのテスト実行を管理します。".
+                                     "期間は<b>開始日の00時00分00秒</b>に始まり（開始日時が指定されていないなら、".
+                                     "全てのテスト実行が処理されます）、<b>目標日の23時59分59秒</b>に終了します。<br />".
+                                     "目標日以降のテスト実行は無視されます。<br />".
+                                     "マイルストーンは、「完了したテスト」が指定した割合に達したときに".
+                                     "終了します。マイルストーンの状況はテスト計画のメトリクスにて確認することが出来ます。";"Milestones consider executions within a specified time period.<br />This period starts " .
 
 $TLS_th_date_format = "目標日";
 $TLS_th_perc_a_prio = "完了すべき優先度 A のテストの割合 [0-100%]";
@@ -1467,20 +1467,6 @@ $TLS_testproject_alt_requirement_feature = '要件機能有効';
 $TLS_testproject_alt_edit = 'テストプロジェクトの編集';
 $TLS_testproject_txt_empty_list = 'テストプロジェクトが定義されていません！';
 $TLS_testproject_prefix = 'プレフィックス(テストケースIDで使用)';
-$TLS_warning_empty_tcase_prefix = 'テストケースIDプレフィックスは空白にできません！';
-$TLS_warning_empty_tproject_name = 'テストプロジェクト名は空白にできません！';
-
-
-
-
-
-// Warning!!! - if JS string you must use \\n to get \n
-$TLS_popup_product_delete = "警告! この操作は、プロジェクトに関連した全ての" .
-                            "データ (テスト結果、テスト計画等)を削除します。" .
-                            "削除の代わりにプロジェクトを無効化することができます。\\n" .
-                            "推奨: 最初にデータベースのバックアップを実行してください。\\n" .
-                            "本当にテストプロジェクトを削除しますか?"; 
-
 $TLS_warning_empty_tcase_prefix = "テストケースプレフィックスは空欄にできません!";
 $TLS_warning_empty_tproject_name = "テストプロジェクト名は空欄にできません!";
 
