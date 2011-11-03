@@ -225,13 +225,6 @@ using CTRL-Click inside the Multi-Select ListBox</p>
 "\"on ANY build\" and \"on specific build\". If \"specific build\" is chosen you then can " .
 "specify the build. </p>";
 
-
-// newest_tcversions.html
-$TLS_hlp_planTcModified = "<h2>Newest versions of linked Test Cases</h2>
-<p>The whole set of Test Cases linked to Test Plan is analyzed, and a list of Test Cases
-which have a newest version is displayed (against the current set of the Test Plan).
-</p>";
-
 // 以下は旧翻訳削除
 /*
 $TLS_hlp_executeFilter = "<h2>テスト実行時のビルドによるフィルタリング</h2>
@@ -340,15 +333,12 @@ $TLS_hlp_planAddTC = "<h2>「カスタムフィールドの保存」について
 ";
 
 // resultsByTesterPerBuild.tpl
-$TLS_hlp_results_by_tester_per_build_table = "<b>More information about testers:</b><br />
-If you click on a tester name in this table, you will get a more detailed overview
-about all Test Cases assigned to that user and his testing progress.<br /><br />
-<b>Note:</b><br />
-This Report shows those test cases, which are assigned to a specific user and have been executed 
-based on each active build. Even if a test case has been executed by another user than the assigned user, 
-the test case will appear as executed for the assigned user.
+$TLS_hlp_results_by_tester_per_build_table = "<b>テスト担当者についての追加情報:</b><br />
+この表からテスト担当者の名前をクリックすると、アサインされている全てのテストケースとテスト実行状況の概要を参照できます。<br /><br />
+<b>備考:</b><br />
+このレポートは特定のユーザにアサインされて、各有効なビルドで実行されたテストケースを参照することが出来ます。
+もし、テストケースがアサインされたユーザ以外で実行されたとしても、アサインされたユーザが実行したように表示されます。
 ";
-
 
 // req_edit
 $TLS_hlp_req_edit = "<h3>Internal links on scope:</h3>
