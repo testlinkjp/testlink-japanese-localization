@@ -1694,23 +1694,23 @@ $TLS_th_overall = "全体";
 $TLS_info_res_by_top_level_suites = "本レポートはテストスイートの各トップレベルテストスイートの結果を示します。".
                                     "各子要素のテストスイートは、それを含むトップレベルテストスイートのカウントに".
                                     "含まれます。";
-$TLS_info_report_tc_priorities = "This report shows results according to the test priorities " .
-                                 "The priority of a test case is calculated based on the test " .
-                                 "importance and test urgency. For further information about " .”"
-                                 "test priority read the manual and check your configuration.";
-$TLS_info_res_by_platform = "This report shows the result for each platform linked to this test " .
-                            "plan.";
-$TLS_info_report_milestones_prio = "This Report shows milestones defined for this test plan. " .
-                                   "A milestone has been reached when all \"sub-milestones\" for " .
-                                   "each priority are reached (dyed green).";
-$TLS_info_report_milestones_no_prio = "This Report shows milestones defined for this test plan. " .
-                                      "A milestone has been reached when Test Progress is dyed " .
-                                      "green (Test Progress > Execution goal).";
-$TLS_info_res_by_kw = "This report shows results for each keyword. If a test case has multiple " .
-                      "keywords assigned it will be count for each assigned keyword.";
-$TLS_info_gen_test_rep = "<b>General Information</b><br />" .
-                         "All reports only consider last execution of each test case.<br />" .
-                         "You can sort tables by clicking the column header.";
+$TLS_info_report_tc_priorities = "このレポートはテストの優先順によって結果を示します。".
+                                 "試験のプライオリティはテスト重要性およびテストの緊急性に基づいて計算されます。".
+                                 "テスト・プライオリティに関するさらに詳しい情報のためには、".
+                                 "マニュアルを読み、設定を確認してください。";
+$TLS_info_res_by_platform = "本レポートはテスト計画にリンクされた各プラットフォーム毎の結果を示します。";
+$TLS_info_report_milestones_prio = "本レポートはテスト計画に定義されたマイルストーンを示します。".
+                                   "一つのマイルストーンは、全ての含まれるマイルストーンが終了".
+                                   "（緑色になった）したときに終了します。";
+$TLS_info_report_milestones_no_prio = "本レポートはテスト計画に定義されたマイルストーンを示します。".
+                                      "マイルストーンはテストの実行が緑になった時（テスト実行 > 実行目標）".
+                                      "に終了します。";
+$TLS_info_res_by_kw = "本レポートは各キーワードのテスト結果を示します。".
+                      "テストケースに複数のキーワードがアサインされていた場合には、".
+                      "各キーワード毎に集計されます。";
+$TLS_info_gen_test_rep = "<b>一般情報</b><br />".
+                         "全てのレポートは各テストケースの最終実行結果のみを示します。<br />".
+                         "カラムヘッダーをクリックすることで並び順を変更できます。";
 
 
 // ----- gui/templates/resultsMoreBuilds_query_form.tpl -----
@@ -1775,7 +1775,6 @@ $TLS_report_display_options = "レポート表示オプション";
 
 // ----- gui/templates/resultsReqs.tpl -----
 $TLS_no_srs_defined = "このテストプロジェクトには要件仕様がありません";
-$TLS_req_without_tcase = "要件がテストケースによってカバーされていません";
 $TLS_no_matching_reqs = "条件に合った要件がありません。";
 $TLS_count_of_reqs = "要件数";
 $TLS_req_availability = "有効な要件";
@@ -1845,6 +1844,15 @@ $TLS_multisort_button_tooltip = 'ソート順の変更にはクリックしま�
                                 'ボタンを削除するには、シフトクリックします。' .
                                 '複数ソートボタンでソート順を変更できます。';
 
+
+
+// ----- gui/templates/results/tcNotRunAnyPlatform.tpl -----
+$TLS_info_tcNotRunAnyPlatform = "本レポートは現在のテスト計画にリンクされ、かつ、".
+                                "一つ以上のプラットフォームで実行されていないテストケースをしめします。<br />".
+                                "最後のプラットフォームでテストが実行されたら、".
+                                "本レポートには出力されなくなります。";
+
+
 // ----- gui/templates/resultsImport.tpl -----
 $TLS_results_import_format = "XML ファイルは以下のフォーマットに従う必要があります: ";
 $TLS_title_results_import_to = "インポート結果";
@@ -1865,7 +1873,9 @@ $TLS_testsuite_is_empty = 'テストスイート直下にテストケースが�
 
 // ----- gui/templates/printDocOptions.tpl -----
 $TLS_doc_opt_title = 'ドキュメントオプション';
-$TLS_doc_opt_guide = 'ドキュメントの表示構造を変更するにはオプションを変更する必要があります。生成するドキュメント内容に合わせて、ツーリーのトップもしくは必要なテストスイートを選択してください。';
+$TLS_doc_opt_guide = 'ドキュメントの表示構造を変更するにはオプションを変更する必要があります。'.
+                     '生成するドキュメント内容に合わせて、ツーリーのトップもしくは'.
+                     '必要なテストスイートを選択してください。';
 $TLS_tr_td_show_as = "表示形式";
 $TLS_check_uncheck_all_options = "全て選択/非選択";
 
@@ -2094,7 +2104,14 @@ $TLS_req_specs = "要件仕様";
 $TLS_req_expected_coverage = "期待するテストケース数";
 $TLS_has_relation_type = "タイプに関連あり";
 $TLS_reqid = "要件ID";
-
+$TLS_info_search_req = "本一覧は検索条件に適合した全ての要件を表示します。<br />".
+                       "要件のタイトルの右側にあるリンクマークをクリックすることで、".
+                       "適合した要件のバージョン/レビジョンを開くことができます。<br />".
+                       "全ての要件を開くには、左側の編集アイコンを使ってください。";
+$TLS_info_search_req_spec = "本一覧は検索条件に適合した全ての要件仕様を表示します。<br />".
+                            "要件仕様のタイトルの右側にあるリンクマークをクリックすることで、".
+                            "適合したレビジョンの要件仕様を開くことができます。<br />"
+                            "全ての要件仕様を開くには、左側の編集アイコンを使ってください。";
 
 // ----- gui/templates/mainPage_right.tpl -----
 $TLS_href_add_remove_test_cases = "テストケースの追加/削除";
@@ -2233,6 +2250,9 @@ $TLS_desc_testplan_execute = "テスト計画の実行";
 $TLS_desc_testplan_metrics = "テスト計画のメトリクス";
 $TLS_desc_testplan_planning = "テスト計画のプランニング";
 $TLS_desc_user_role_assignment = "役割のアサイン";
+$TLS_desc_req_tcase_link_management = "要件とテストケースのアサイン";
+$TLS_desc_keyword_assignment = "キーワードのアサイン";
+
 $TLS_error_duplicate_rolename = "その名称の役割は既に存在します!";
 $TLS_error_role_no_rights = "権限不足により役割を保存できません!";
 $TLS_error_role_no_rolename = "役割の名称を入力してください!";
@@ -2269,6 +2289,10 @@ $TLS_warning_duplicate_reqdoc_id = "重複したドキュメントID";
 $TLS_req_import_result_skipped_is_frozen = "スキップ (確定済み)";
 $TLS_warning_sibling_req_with_same_title = "要件名の重複 %s";
 
+//  ----- lib/functions/requirement_spec_mgr.class.php -----
+$TLS_warning_duplicated_req_spec_doc_id = "すでに要件仕様(タイトル:%s)でID(%s)をもつ項目があります";
+$TLS_warning_duplicated_req_spec_title = "すでに要件仕様(doc id:%s)でタイトル(%s)をもつ項目があります";
+
 
 // ----- lib/functions/testcase.class.php -----
 $TLS_create_new_version = "%sの新バージョンを作成しました"; 
@@ -2297,6 +2321,7 @@ $TLS_passfail = "テスト結果";
 $TLS_testnotes = "備考";
 $TLS_last_exec_result = "最新の結果";
 $TLS_test_project_notes = "テストプロジェクトの説明";
+$TLS_undefined_req_spec_type = "要件仕様種別(%s)は定義されていません";
 
 
 // ----- lib/functions/users.inc.php -----
@@ -2340,6 +2365,10 @@ $TLS_error_gd_missing = "GD PHP拡張が使用できません。グラフが機�
 		"この設定を行ってもこの問題が解決されない場合は、php-GDライブラリをインストールする必要があるでしょう。";
 $TLS_error_gd_png_support_disabled = "GDライブラリのPHP拡張がPNGフォーマットを使用できるように構成されていません。" .
 		"このままではチャート機能は動作しません。PHPの設定を変更するか、必要なライブラリをインストールしてください。";
+
+
+// ----- lib/functions/cfield_mgr.class.php -----
+$TLS_text_counter_feedback = "最低 %d 文字を入力してください。";
 
 
 // ----- lib/general/frmWorkArea.php -----
@@ -2390,6 +2419,7 @@ $TLS_warning_enter_valid_date = "有効な日付を入力してください！";
 $TLS_warning_invalid_percentage_value = "パーセンテージの範囲は0 から 100% までです";
 $TLS_warning_milestone_date = "マイルストーンは今日以降の日付で作ってください！";
 $TLS_warning_percentage_value_higher_than_100 = "パーセンテージの合算は100を超えることはできません";
+$TLS_warning_target_before_start = "目標日は開始日の後にしなければなりません";
 
 
 
@@ -2518,6 +2548,7 @@ $TLS_chart_report = "レポート";
 $TLS_chart_assigned_testers = "オーナー";
 $TLS_chart_keywords = "キーワード";
 $TLS_chart_testsuites = "テストスイート";
+$TLS_overall_metrics_for_platform = "総合メトリクス - プラットフォーム: ";
 
 
 // ----- lib/req/reqImport.php -----
@@ -2610,6 +2641,14 @@ $TLS_list_of_failed = "失敗したテストケース";
 $TLS_list_of_not_run = "未実行のテストケース";
 
 
+
+// ----- lib/results/tcNotRunAnyPlatform.php -----
+$TLS_title_test_report_not_run_on_any_platform = "テストレポート: どのプラットフォームでも実行されていないテストケース";
+$TLS_not_run_any_platform_status_msg = "本テスト計画に %d 件のテストケースがリンクされています。<br/> " .
+                                       "%d 件のテストケースがいずれのプラットフォームでも実行されていません。</p>";
+$TLS_not_run_any_platform_no_platforms = "本テスト計画にはプラットフォームが紐付いていません。";
+
+
 // ----- lib/results/testPlanWithCF----
 $TLS_link_report_tplans_with_cf = "カスタムフィールド情報とテスト計画";
 $TLS_caption_testPlanWithCF = $TLS_link_report_tplans_with_cf;
@@ -2622,8 +2661,15 @@ $TLS_result_on_last_build = '[最後のビルド]';
 $TLS_tcversion_indicator = ' [v%s]';
 
 
+// ----- lib/results/testCasesWithCF.php -----
+$TLS_link_report_tcases_with_cf = "実行指定されたカスタムフィールドをもつテストケース";
+$TLS_caption_testCasesWithCF = $TLS_link_report_tcases_with_cf;
+$TLS_no_linked_tc_cf= '実行指定されたカスタムフィールドをもつテストケースがありません';
+$TLS_info_testCasesWithCF = "本レポートは実行指定されたカスタムフィールドをもつ全てのテストを示します。" .
+                            "さらに、実行時の補足情報が各テストケースに表示されます。";
 
-// ----- lib/results/resultsNavigator.php -----
+
+// ----- cfg/reports.cfg.php -----
 $TLS_link_charts = "グラフ";
 $TLS_link_report_blocked_tcs = "ブロックされたテストケース";
 $TLS_link_report_failed = "失敗したテストケース";
@@ -2666,7 +2712,8 @@ $TLS_warning_create_build_first = "ビルドを作成するか、最初にデー
 $TLS_error_sendreport_no_email_credentials = "このユーザからのEメールが特定できません。" .
 		"Eメールの'Personal'タブの信用証明を修正してください";
 
-
+$TLS_mail_sent_to = '%s へメールを送信しました';
+$TLS_send_mail_ko = '警告：メール送信に問題がありました。詳細: ';
 
 // ----- lib/testcases/archive.inc.php -----
 
@@ -2848,6 +2895,7 @@ $TLS_testsuite_name_created = "テストスイート %s が新規作成されま
 // ----- keywordsEdit.php -----
 $TLS_keyword_management = "キーワードの管理";
 $TLS_create_keyword = "キーワードの作成";
+$TLS_delete_keyword = "キーワードの削除";
 $TLS_edit_keyword = "キーワードの編集";
 $TLS_warning_empty_keyword = "キーワードは空白にできません!";
 
@@ -3004,6 +3052,7 @@ $TLS_audit_user_role_changed = "ユーザ '{%1}' の役割は '{%2}' から '{%3
 $TLS_audit_user_active_status_changed = "ユーザ '{%1}' のアクティブステータスは '{%2}' から '{%3}' に変更されました";
 
 $TLS_audit_security_user_right_missing = "ユーザ '{%1}' は '{%2}' で '{%3}' を行う権限を持っていません! 強制的に終了します!";
+$TLS_audit_security_no_environment = "'{%1}'の仕様には環境設定(テストプロジェクトID)が必要ですが、設定されていません。強制終了します!";
 
 $TLS_audit_testproject_created = $TLS_testproject . " '{%1}' は作成されました";
 $TLS_audit_testproject_saved = $TLS_testproject . " '{%1}' はセーブされました";
@@ -3054,7 +3103,7 @@ $TLS_audit_tc_removed_from_testplan = "テストケース '{%1}' バージョン
 
 $TLS_audit_missing_localization = "文字列 '{%1}' は '{%2}'によって日本語化されていません";
 
-$TLS_audit_events_deleted = "ユーザ '{%1}' は全てのイベントを削除しました";
+$TLS_audit_all_events_deleted = "ユーザ '{%1}' は全てのイベントを削除しました";
 $TLS_audit_events_with_level_deleted = "ユーザ '{%1}' は、レベル: {%2} のイベントを削除しました。";
 
 
@@ -3083,7 +3132,8 @@ $TLS_title_eventdetails = "イベント詳細";
 $TLS_th_user = "ユーザ";
 $TLS_th_transaction = "トランザクション";
 $TLS_show_event_history = "イベント履歴の参照";
-$TLS_btn_clear_events = "全イベントの消去";
+$TLS_btn_clear_all_events = "全イベントの消去";
+$TLS_btn_clear_events = "イベントの消去";
 $TLS_th_event_description = "説明";
 $TLS_select_user = "ユーザ (標準は全て)";
 $TLS_clear_tip = "選択したログレベルもしくは、なにも選択しない場合には全てのログが削除されます。";
@@ -3124,6 +3174,8 @@ $TLS_testCasesWithoutTester_info = "本レポートは、テスト計画のど�
 $TLS_report_free_testcases_on_testproject=$TLS_link_report_free_testcases_on_testproject;
 $TLS_all_testcases_has_testplan="すでに全テストケースがテスト計画にアサインされています。";
 $TLS_all_testcases_are_free="ひとつのテストケースもテスト計画にアサインされていません。";
+$TLS_info_tc_not_assigned_to_any_tplan = "本レポートは本テストプロジェクトで、ひとつもテスト計画にアサインされていない”.
+                                         "全てのテストケースを表示します。";
 
 
 // ----- timeCharts ----- 
@@ -3143,14 +3195,19 @@ $TLS_id_not_set = "IDが設定されていません。";
 $TLS_testcase_not_found = "テストケース %s がテストプロジェクト(prefix:%s)に見つかりません。";
 $TLS_req_spec_not_found = "要件仕様 %s がテストプロジェクト(プレフィックス:%s)に見つかりません。";
 $TLS_req_not_found = "要件 %s がテストプロジェクト(プレフィックス:%s)に見つかりません。";
+$TLS_req_version_not_found = "バージョン %s の要件 %s はテストプロジェクト(prefix:%s)で見つかりません。";
 $TLS_invalid_item = '項目(item:%s)が無効です';
 $TLS_btn_show_direct_link = "リンクの表示";
+$TLS_direct_link_on_wrong_version = "ここをクリックすることで本文書の現在のバージョンが開きます。";
 
-// ----- testcase/req comparison -----
+// ----- testcase/req spec comparison -----
 $TLS_title_compare_versions_tc = "テストケースのバージョン比較ページ";
 $TLS_title_compare_versions_req = "要件のバージョン比較ページ";
+$TLS_title_compare_revisions_rspec = "要件仕様のバージョン比較ページ";
 $TLS_btn_compare_versions = "バージョン比較";
 $TLS_btn_compare_selected_versions = "選択されたバージョンの比較";
+$TLS_btn_compare_revisions = "レビジョンの比較";
+$TLS_btn_compare_selected_revisions = "選択されたレビジョンの比較";
 $TLS_select_versions = "比較するバージョンの選択:";
 $TLS_version = "バージョン ";
 $TLS_compare = "比較 ";
@@ -3171,11 +3228,16 @@ $TLS_diff_subtitle_tc = "バージョン %s (v%s) とバージョン %s (v%s) �
 $TLS_diff_subtitle_req = "バージョン %s (v%s) とバージョン %s (v%s) の要件 %s の差分";
 $TLS_diff_details_req = "バージョン %s のレビジョン %s (v%s r%s) と" . 
                         "バージョン %s のレビジョン %s (v%s r%s) の要件 %s の差分";
+$TLS_diff_details_rev = "レビジョン %s (r%s) とレビジョン %s (r%s) の差分";
+
 $TLS_warning_context = "内容 (行数) は数値でなければなりません。";
 $TLS_warning_context_range = "内容は範囲外です。（正の数字でなければなりません）";
 $TLS_warning_empty_context = "内容(行数)は、空ではいけません。";
 $TLS_warning_selected_versions = "リストから２つのバージョンを選択してください。";
-$TLS_warning_same_selected_versions = "リストから、２つの異なるバージョンを選択してください。";
+$TLS_warning_same_selected_versions = "リストから２つの異なるバージョンを選択してください。";
+$TLS_warning_selected_revisions = "リストから２つのレビジョンを選択してください。";
+$TLS_warning_same_selected_revisions = "リストから２つの異なるレビジョンを選択してください。";
+
 
 // ----- grab from not-systematic developers -----
 $TLS_step_actions = "ステップ:操作";
@@ -3248,6 +3310,9 @@ $TLS_export_execution_set = '実行のエクスポート';
 // ----- lib/results/resultsReqs.php -----
 $TLS_no_label_for_req_type = '「req_type_labels」のタイプ (%s)は設定さてていません。';
 
+$TLS_print_testcase = 'テストケースの印刷: %s';
+$TLS_print_requirement = '要件の印刷: %s';
+$TLS_print_requirement_specification = '要件仕様の印刷: %s';
 
 // ----- lib/functions/remote_exec.php
 $TLS_remoteExecServerConfigProblems = 'リモート実行は構成ファイルの不足により起動できません。\n' .
@@ -3260,16 +3325,66 @@ $TLS_remoteExecServerConnectionFailure = 'リモート実行の接続不良が�
 // ----- int_polarion.php -----
 // Used to display at User interface label as title attribute
 // Attention must follow rule: issue_status_, because there is logic build on this.
-$TLS_issue_status_open = "Open";
-$TLS_issue_status_accepted = "Accepted";
-$TLS_issue_status_inprogress = "In progress";
-$TLS_issue_status_confirmed = "Confirmed";
-$TLS_issue_status_assigned = "Assigned";
-$TLS_issue_status_resolved = "Resolved";
-$TLS_issue_status_tested = "Tested";
-$TLS_issue_status_delivered = "Delivered";
-$TLS_issue_status_closed = "Closed";
-$TLS_issue_status_held = "Held";
+$TLS_issue_status_open = "オープン";
+$TLS_issue_status_accepted = "承諾済み";
+$TLS_issue_status_inprogress = "処理中";
+$TLS_issue_status_confirmed = "確認済";
+$TLS_issue_status_assigned = "アサイン済";
+$TLS_issue_status_resolved = "解決済";
+$TLS_issue_status_tested = "テスト済";
+$TLS_issue_status_delivered = "リリース済";
+$TLS_issue_status_closed = "完了";
+$TLS_issue_status_held = "保留";
+
+$TLS_testCaseStatus_draft = 'ドラフト';
+$TLS_testCaseStatus_readyForReview = 'レビュー待ち';
+$TLS_testCaseStatus_reviewInProgress = 'レビュー中';
+$TLS_testCaseStatus_rework = '改訂中';
+$TLS_testCaseStatus_obsolete = '不要';
+$TLS_testCaseStatus_future = '未来';
+$TLS_testCaseStatus_final = '最終';		
+
+$TLS_workflow_status = 'ワークフロー状況';
+$TLS_workflowStatus_draft = 'ドラフト';
+$TLS_workflowStatus_readyForReview = 'レビュー待ち';
+$TLS_workflowStatus_reviewInProgress = 'レビュー中';
+$TLS_workflowStatus_rework = 'R改訂中';
+$TLS_workflowStatus_obsolete = '不要';
+$TLS_workflowStatus_future = '未来';
+$TLS_workflowStatus_final = '最終';		
+
+// this definition has to be placed AFTER $TLS_title_metrics_x_build
+$TLS_buildMetricsFeedback = $TLS_title_metrics_x_build . 
+			' ビルドでテスト担当者がアサインされたテストケースのみをつかって計算されます。';
+
+
+
+$TLS_xls_jmexport_testproject = 'テストプロジェクト';
+$TLS_xls_jmexport_testplan = 'テスト計画';
+$TLS_xls_jmexport_created = '作成';
+$TLS_xls_jmexport_author = '作成者';
+$TLS_xls_jmexport_tester = 'テスト担当者';
+$TLS_xls_jmexport_testcase = 'テストケース';
+$TLS_xls_jmexport_testobjectives = 'テストの目的';
+$TLS_xls_jmexport_preconditions = '事前条件';
+$TLS_xls_jmexport_steps = 'ステップ';
+$TLS_xls_jmexport_expected_result = '期待結果';
+$TLS_xls_jmexport_result = '結果';
+$TLS_xls_jmexport_result_comment = '結果備考';
+$TLS_link_report_test_plan_results_csv = 'テスト計画の結果(XLSX)';
+
+
+$TLS_upload_err_ini_size ='アップロードファイルが php.iniのupload_max_filesizeを超えました。(%s)';
+$TLS_upload_err_form_size ='アップロードファイルがHTMLフォームで指定されている MAX_FILE_SIZE を超えました。(%s Bytes)';
+$TLS_upload_err_partial='アップロードファイルの一部のみが取り込まれました。';
+$TLS_upload_err_no_file='ファイルはアップロードされませんでした。';
+$TLS_upload_err_no_tmp_dir='一時フォルダが見つかりません。';
+$TLS_upload_err_cant_write='ファイルの書き込みに失敗しました。PHP 5.1.0.を参照';
+$TLS_upload_err_extension='PHP拡張機能がファイルのアップロードを停止しました。'; 
+
+// execHistory.php
+$TLS_btn_show_exec_history = '実行履歴';
+$TLS_tcase_never_executed = 'このテストケースは実行されていません';
 
 // ----- END ------------------------------------------------------------------
 ?>
