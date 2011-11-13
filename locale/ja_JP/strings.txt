@@ -2110,7 +2110,7 @@ $TLS_info_search_req = "本一覧は検索条件に適合した全ての要件�
                        "全ての要件を開くには、左側の編集アイコンを使ってください。";
 $TLS_info_search_req_spec = "本一覧は検索条件に適合した全ての要件仕様を表示します。<br />".
                             "要件仕様のタイトルの右側にあるリンクマークをクリックすることで、".
-                            "適合したレビジョンの要件仕様を開くことができます。<br />"
+                            "適合したレビジョンの要件仕様を開くことができます。<br />".
                             "全ての要件仕様を開くには、左側の編集アイコンを使ってください。";
 
 // ----- gui/templates/mainPage_right.tpl -----
@@ -3174,8 +3174,7 @@ $TLS_testCasesWithoutTester_info = "本レポートは、テスト計画のど�
 $TLS_report_free_testcases_on_testproject=$TLS_link_report_free_testcases_on_testproject;
 $TLS_all_testcases_has_testplan="すでに全テストケースがテスト計画にアサインされています。";
 $TLS_all_testcases_are_free="ひとつのテストケースもテスト計画にアサインされていません。";
-$TLS_info_tc_not_assigned_to_any_tplan = "本レポートは本テストプロジェクトで、ひとつもテスト計画にアサインされていない”.
-                                         "全てのテストケースを表示します。";
+$TLS_info_tc_not_assigned_to_any_tplan = "本レポートは本テストプロジェクトで、ひとつもテスト計画にアサインされていない全てのテストケースを表示します。";
 
 
 // ----- timeCharts ----- 
